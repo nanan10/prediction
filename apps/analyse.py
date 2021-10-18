@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 data1 = pd.read_csv('ml1_data.csv', sep=';', encoding='ISO-8859-1')
 data2 = pd.DataFrame(data1)
@@ -17,9 +15,7 @@ def app():
        ###### Idendification des valeurs manquantes
        ''')
 
-    st.write(
-        plt.figure(figsize=(20, 10)),
-        sns.heatmap(data2.isna(), cbar=False))
+    st.write(data2.isna().sum())
     st.write('''Toute les valeurs sont présentes dans notre jeu de donnée et sont correcte ''')
 
     st.write(''' Pour cette Analyse nous allons utilisé toute les variables puisqu'elles
